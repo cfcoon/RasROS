@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<EmbeddedProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+  <ToolchainVersion>
+    <GCC>14.2.1</GCC>
+    <GDB>15.2</GDB>
+    <Revision>1</Revision>
+  </ToolchainVersion>
+  <BspID>com.visualgdb.bsp.in-place</BspID>
+  <BspVersion>1.0</BspVersion>
+  <MCUProperties>
+    <Entries />
+  </MCUProperties>
+  <BSPSourceFolderName>Device-specific files</BSPSourceFolderName>
+  <InPlaceMCU>
+    <CompilationFlags>
+      <IncludeDirectories>
+        <string>$$SYS:BSP_ROOT$$/Include</string>
+        <string>$$SYS:BSP_ROOT$$/FreeRTOS/include</string>
+        <string>$$SYS:BSP_ROOT$$/Drivers</string>
+      </IncludeDirectories>
+      <CFLAGS>-fsigned-char -ffreestanding -nostartfiles -std=c99 -Os -march=armv6k -mtune=arm1176jzf-s -marm -mfpu=vfp -mfloat-abi=hard</CFLAGS>
+      <CXXFLAGS>-fsigned-char -ffreestanding -nostartfiles -std=c99 -Os -march=armv6k -mtune=arm1176jzf-s -marm -mfpu=vfp -mfloat-abi=hard</CXXFLAGS>
+      <LDFLAGS>-fsigned-char -ffreestanding -nostartfiles -std=c99 -Os -march=armv6k -mtune=arm1176jzf-s -marm -mfpu=vfp -mfloat-abi=hard</LDFLAGS>
+      <ASFLAGS>-fsigned-char -ffreestanding -nostartfiles -std=c99 -Os -march=armv6k -mtune=arm1176jzf-s -marm -mfpu=vfp -mfloat-abi=hard</ASFLAGS>
+      <LinkerScript>$$SYS:BSP_ROOT$$/linker.ld</LinkerScript>
+      <EnableLinkerGroups>true</EnableLinkerGroups>
+    </CompilationFlags>
+    <FLASHSize>0</FLASHSize>
+    <RAMSize>0</RAMSize>
+    <FLASHBase>4294967295</FLASHBase>
+    <RAMBase>4294967295</RAMBase>
+    <AdditionalSourcesRequiredForTesting>false</AdditionalSourcesRequiredForTesting>
+  </InPlaceMCU>
+  <MCUMakFile>mcu.mak</MCUMakFile>
+  <ReferencedFrameworks />
+  <FrameworkProperties>
+    <Entries />
+  </FrameworkProperties>
+  <TestFrameworkProperties>
+    <Entries />
+  </TestFrameworkProperties>
+</EmbeddedProfile>
