@@ -65,4 +65,6 @@ Other files in this repository are optional but useful libraries that have been 
 
 - If you're new to [FreeRTOS](https://freertos.org/Documentation/00-Overview), the overall idea is that you have multiple "tasks" (C functions) that are all started at initialization and each run forever in their own infinite loops. The example tasks in kernel_main() are set to run at the same priority, so under FreeRTOS they get time-sliced evenly for execution. You can however set different priorities to tasks, and set a pre-emptive option (on by default, see freeRTOSConfig.h) so if a high priority interrupt needs immediate handling, for example, its handler task can be given full CPU until it has decided it is finished and yields. All those options are described in the documentation link above, but if you don't care and just want to split task execution evenly, you can do everything like the xTaskCreate examples in kernel_main.  
 
-- There aren't SD card file functions in this project, so if you have run-time data like bitmaps you want to display, you'll need to encode it as static array data (see Font8x16.h for an example). Search online for binary file to C array converters.
+- There aren't SD card file functions in this project, so if you have run-time data like bitmaps you want to display, you'll need to encode it as static array data (see Font8x16.h for an example). Or if your compiler supports the C23 standard, you can use #embed to include a file at compile time, e.g. static const unsigned char bitmap_data[] = {
+    #embed "Bitmap.bmp"
+};
