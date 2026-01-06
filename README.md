@@ -37,6 +37,8 @@ FreeRTOS is a well-established, robust, proven, open-source multi-task scheduler
 
 objcopy.exe -I binary RasROS.bin -O binary kernel.img
 
+(If you're using Visual Studio, this will be done automatically when you compile). 
+
 3\. Insert a bootable SD card from your RPi Zero into an SD card reader on your development system. It should show up as two partitions/drives, one called "recovery" and one called "boot." You'll need to copy kernel.img from step two into the "boot" directory (though first save the original kernel.img in case you want to restore it later). This is the file the RPi Zero will look for and load at startup.
 
 Note the RPi boot process starts with on-board firmware loading additional firmware (binary blobs) off the SD card which is why you need all the other files from an original bootable SD card. The firmware executes startup and initialization code in the video GPU (which shows a color pattern and the Raspberry Pi logo on the display) before loading your "kernel.img" executable into the main CPU, where it starts execution at address 0x8000.
