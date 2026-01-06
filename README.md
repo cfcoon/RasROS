@@ -6,7 +6,7 @@ This C project (RASpberry Real-time Operating System) is if you just want to run
 
 The main loop of this "Hello World" example code launches two simple tasks (threads) that each animate a rotating character on different parts of the screen and run indefinitely. You can use it as a base to add your own project's code that launches simultaneous tasks in a similar way, or otherwise executes from the starting function kernel_main() in kernel.c.
 
-The limitation of this project is that some of the on-board RPi hardware devices (peripherals) are proprietary, so there is little to no public documentation available to be able to write drivers for them. Therefore there's no code included to access the on-board WiFi/Ethernet, USB, accelerated graphics, or SD card (other than initial loading of the kernel). However, there are library functions to create text and 2D graphics on the HDMI output (via drawing to the hardware framebuffer), input and output on GPIO pins, and support for I2C, SPI and UART serial communication.
+The limitation of this project is that some of the on-board RPi hardware devices (peripherals) are proprietary, so there is little to no public documentation available to be able to write drivers for them (other than reverse-engineering drivers for other OS's). Therefore there's no code included to access the on-board WiFi/Ethernet, USB, accelerated graphics, or SD card (other than initial loading of the kernel). However, there are library functions to create text and 2D graphics on the HDMI output (via drawing to the hardware framebuffer), input and output on GPIO pins, and support for I2C, SPI and UART serial communication.
 
 ## Why Bare Metal Raspberry Pi Zero?
 
